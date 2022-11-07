@@ -1,0 +1,15 @@
+on:
+  push
+name: action
+jobs:
+  hello_world_job:
+    name: Un job pour saluer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step Say-Hello
+        id: say-hello
+        uses: aldazj/docker-action-test@v1
+        with:
+          who-to-say-hello: "Jayro"
+      - name: Get the output time
+        run: echo "la date était ${{ steps.say-hello.outputs.time }}"
