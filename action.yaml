@@ -1,0 +1,15 @@
+name: 'Bonjour tout le monde'
+description: 'Saluer une personne et enregistrer la date'
+inputs:
+  who-to-say-hello:  # id of input
+    description: 'Personne a qui saluer'
+    required: true
+    default: 'Tout le monde'
+outputs:
+  time: # id of output
+    description: 'La date quand nous avons saluer la personne concernée'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-say-hello }}
