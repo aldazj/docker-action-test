@@ -4,8 +4,6 @@ RUN chmod +x entrypoint.sh
 
 COPY entrypoint.sh /user/local/entrypoint.sh
 
-WORKDIR /user/local/entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/user/local/entrypoint.sh"]
 
 
